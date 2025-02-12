@@ -1,0 +1,24 @@
+﻿@model Category
+
+<div class="container">
+    <h2 class="text-white">Информация о мертвом</h2>
+    <hr />
+    <p><strong>Имя:</strong> @Model.Name</p>
+    <p><strong>Фамилия:</strong> @Model.Surname</p>
+    <p><strong>Год смерти:</strong> @Model.Year</p>
+    <p><strong>Причина смерти:</strong> @Model.CauseOfDeath</p>
+    @if (!Model.IsLegend)
+    {
+        <div class="d-flex gap-3">
+            <form asp-action="Delete" method="post">
+                <input type="hidden" asp-for="Id" />
+                <button type="submit" class="btn btn-success">Оживить</button>
+            </form>
+        </div>
+    }
+    else
+    {
+        <p class="text-warning">Эта легенда не может быть оживлена.</p>
+    }
+    <a asp-controller="Category" asp-action="Index" class="btn btn-secondary">Оставить мертвым</a>
+</div>

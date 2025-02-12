@@ -6,4 +6,8 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Content Remove="Views\Category\Delete.cshtml" />
+  </ItemGroup>
+
 </Project>
